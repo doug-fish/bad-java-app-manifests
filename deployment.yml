@@ -6,17 +6,16 @@ metadata:
   creationTimestamp: 2018-02-07T16:51:19Z
   generation: 12
   labels:
-    run: bad-java-test-app
-  name: bad-java-test-app
-  namespace: default
+    run: bad-java-test-app-demo
+  name: bad-java-test-app-demo
   resourceVersion: "6882192"
-  selfLink: /apis/extensions/v1beta1/namespaces/default/deployments/bad-java-test-app
+  selfLink: /apis/extensions/v1beta1/namespaces/default/deployments/bad-java-test-app-demo
   uid: 1ef38872-0c27-11e8-97c5-0a58ac1f0f6b
 spec:
   replicas: 1
   selector:
     matchLabels:
-      run: bad-java-test-app
+      run: bad-java-test-app-demo
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -26,21 +25,18 @@ spec:
     metadata:
       creationTimestamp: null
       labels:
-        run: bad-java-test-app
+        run: bad-java-test-app-demo
     spec:
       containers:
       - image: drfaks.azurecr.io/bad-java-test-app
         imagePullPolicy: Always
-        name: bad-java-test-app
+        name: bad-java-test-app-demo
         resources: {}
-        terminationMessagePath: /dev/termination-log
-        terminationMessagePolicy: File
       dnsPolicy: ClusterFirst
       imagePullSecrets:
       - name: drfaks
       nodeSelector:
         node-quality: sketchy
       restartPolicy: Always
-      schedulerName: default-scheduler
       securityContext: {}
       terminationGracePeriodSeconds: 30

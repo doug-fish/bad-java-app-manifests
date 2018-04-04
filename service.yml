@@ -3,21 +3,19 @@ kind: Service
 metadata:
   creationTimestamp: 2018-02-07T16:53:11Z
   labels:
-    run: bad-java-test-app
-  name: bad-java-test-app
-  namespace: default
+    run: bad-java-test-app-demo
+  name: bad-java-test-app-demo
   resourceVersion: "1048499"
-  selfLink: /api/v1/namespaces/default/services/bad-java-test-app
+  selfLink: /api/v1/namespaces/default/services/bad-java-test-app-demo
   uid: 614dbaa5-0c27-11e8-97c5-0a58ac1f0f6b
 spec:
-  clusterIP: 10.0.212.33
   externalTrafficPolicy: Cluster
   ports:
-  - nodePort: 30020
-    port: 80
+  - port: 80
     protocol: TCP
     targetPort: 8080
+    name: bad-java-test-app-demo
   selector:
-    run: bad-java-test-app
+    run: bad-java-test-app-demo
   sessionAffinity: ClientIP
   type: LoadBalancer
