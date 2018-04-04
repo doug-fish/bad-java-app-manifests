@@ -2,15 +2,16 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   annotations:
-    deployment.kubernetes.io/revision: "6"
-  creationTimestamp: 2018-02-07T16:51:19Z
-  generation: 12
+    deployment.kubernetes.io/revision: "2"
+  creationTimestamp: 2018-04-04T20:24:59Z
+  generation: 2
   labels:
     run: bad-java-test-app-demo
   name: bad-java-test-app-demo
-  resourceVersion: "6882192"
-  selfLink: /apis/extensions/v1beta1/namespaces/default/deployments/bad-java-test-app-demo
-  uid: 1ef38872-0c27-11e8-97c5-0a58ac1f0f6b
+  namespace: bad-java-test-app
+  resourceVersion: "7660196"
+  selfLink: /apis/extensions/v1beta1/namespaces/bad-java-test-app/deployments/bad-java-test-app-demo
+  uid: 3f5ac5be-3846-11e8-9247-005056a4e657
 spec:
   replicas: 1
   selector:
@@ -28,15 +29,30 @@ spec:
         run: bad-java-test-app-demo
     spec:
       containers:
-      - image: drfaks.azurecr.io/bad-java-test-app
+      - image: dougfish1/bad-java-test-app
         imagePullPolicy: Always
         name: bad-java-test-app-demo
         resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
       dnsPolicy: ClusterFirst
       imagePullSecrets:
       - name: drfaks
       nodeSelector:
         node-quality: sketchy
       restartPolicy: Always
+      schedulerName: default-scheduler
       securityContext: {}
       terminationGracePeriodSeconds: 30
+status:
+  conditions:
+  - lastTransitionTime: 2018-04-04T20:24:59Z
+    lastUpdateTime: 2018-04-04T20:24:59Z
+    message: Deployment has minimum availability.
+    reason: MinimumReplicasAvailable
+    status: "True"
+    type: Available
+  observedGeneration: 2
+  replicas: 1
+  unavailableReplicas: 1
+  updatedReplicas: 1
