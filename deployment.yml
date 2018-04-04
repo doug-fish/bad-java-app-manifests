@@ -1,19 +1,13 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  annotations:
-    deployment.kubernetes.io/revision: "2"
-  creationTimestamp: 2018-04-04T20:24:59Z
-  generation: 2
   labels:
     run: bad-java-test-app-demo
   name: bad-java-test-app-demo
   namespace: bad-java-test-app
-  resourceVersion: "7660196"
   selfLink: /apis/extensions/v1beta1/namespaces/bad-java-test-app/deployments/bad-java-test-app-demo
-  uid: 3f5ac5be-3846-11e8-9247-005056a4e657
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       run: bad-java-test-app-demo
@@ -44,15 +38,3 @@ spec:
       schedulerName: default-scheduler
       securityContext: {}
       terminationGracePeriodSeconds: 30
-status:
-  conditions:
-  - lastTransitionTime: 2018-04-04T20:24:59Z
-    lastUpdateTime: 2018-04-04T20:24:59Z
-    message: Deployment has minimum availability.
-    reason: MinimumReplicasAvailable
-    status: "True"
-    type: Available
-  observedGeneration: 2
-  replicas: 1
-  unavailableReplicas: 1
-  updatedReplicas: 1
