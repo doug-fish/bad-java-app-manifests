@@ -5,14 +5,7 @@ metadata:
   labels:
     run: bad-java-test-app-demo
   name: bad-java-test-app-demo
-  namespace: bad-java-test-app
-  resourceVersion: "7652008"
-  selfLink: /api/v1/namespaces/bad-java-test-app/services/bad-java-test-app-demo
-  uid: a6f8eeb8-3846-11e8-9247-005056a4e657
 spec:
-  clusterIP: 172.30.189.110
-  externalIPs:
-  - 172.29.54.215
   externalTrafficPolicy: Cluster
   ports:
   - name: bad-java-test-app-demo
@@ -24,7 +17,3 @@ spec:
     run: bad-java-test-app-demo
   sessionAffinity: ClientIP
   type: LoadBalancer
-status:
-  loadBalancer:
-    ingress:
-    - ip: 172.29.54.215

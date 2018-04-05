@@ -4,8 +4,6 @@ metadata:
   labels:
     run: bad-java-test-app-demo
   name: bad-java-test-app-demo
-  namespace: bad-java-test-app
-  selfLink: /apis/extensions/v1beta1/namespaces/bad-java-test-app/deployments/bad-java-test-app-demo
 spec:
   replicas: 3
   selector:
@@ -30,10 +28,6 @@ spec:
         terminationMessagePath: /dev/termination-log
         terminationMessagePolicy: File
       dnsPolicy: ClusterFirst
-      imagePullSecrets:
-      - name: drfaks
-      nodeSelector:
-        node-quality: sketchy
       restartPolicy: Always
       schedulerName: default-scheduler
       securityContext: {}
