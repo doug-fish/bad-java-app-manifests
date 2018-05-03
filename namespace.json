@@ -2,9 +2,9 @@
   "kind": "Namespace",
   "apiVersion": "v1",
   "metadata": {
-    "name": "bad-java-test-app-demo",
+    "name": "{{NAMESPACE}}",
     "labels": {
-      "name": "bad-java-test-app-demo"
+      "name": "{{NAMEPSPACE}}"
     }
   }
 }
